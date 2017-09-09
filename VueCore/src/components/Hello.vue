@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h3>{{msg}}</h3>
+    <h3>{{msg}} asd</h3>
     <v-container grid-list-xl text-xs-center>
       <v-layout row wrap>
         <v-flex xs10 offset-xs1>
@@ -33,7 +33,7 @@
         name: '',
         email: '',
         checkbox: true,
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js app'
       }
     },
 

@@ -4,7 +4,7 @@ namespace VueCore.Controllers
   {
     public GreeterModule()
     {
-      Get("/greeting", args => new { Message = "Greetings From NancyFx" });
+      Get("/greeting", args => new { Message = "Hello World From VueCore!" });
     }
   }
 }

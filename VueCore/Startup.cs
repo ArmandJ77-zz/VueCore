@@ -7,10 +7,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Nancy;
 using Nancy.Owin;
+using VueCore.Infrastructure;
+
 //using VueCore.Infrastructure.Bootstrapper;
 
-namespace VueCore 
+namespace VueCore
 {
   public class Startup
   {
@@ -28,15 +32,20 @@ namespace VueCore
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
     {
+
+      loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+      loggerFactory.AddDebug();
+
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
         app.UseBrowserLink();
         // Setup WebpackDevMidleware for "Hot module replacement" while debugging
-        var options = new WebpackDevMiddlewareOptions() { HotModuleReplacement = true };
-        app.UseWebpackDevMiddleware(options);
+
+        app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+          { HotModuleReplacement = true });
       }
       else
       {
@@ -44,7 +53,14 @@ namespace VueCore
       }
 
       app.UseStaticFiles();
-      app.UseOwin(n => n.UseNancy());
+      app.UseOwin(x => x.UseNancy(options =>
+      {
+        options.Bootstrapper = new AppNancyBootstrapper(env);
+        options.PassThroughWhenStatusCodesAre(
+          HttpStatusCode.NotFound,
+          HttpStatusCode.InternalServerError
+          );
+      }));
 
       app.UseMvc(routes =>
       {
