@@ -1,0 +1,32 @@
+@import '../../node_modules/vuetify/src/stylus/settings/_colors'
+
+$theme := {
+  primary: $blue.darken-4
+  accent: $light-blue.lighten-1
+  secondary: $light-blue.darken-1
+  info: $blue.lighten-1
+  warning: $amber.darken-2
+  error: $red.accent-4
+  success: $green.lighten-2
+}
+
+body{
+  background-color:grey lighten-4 !important;
+}
+
+.router-link-exact-active li{
+  background-color:$light-blue.lighten-1
+  color: white;
+}
+
+.router-link-exact-active li .list__tile__title{
+  color: white;
+}
+
+.vertical-align{
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+@import '../../node_modules/vuetify/src/stylus/main'
