@@ -28,7 +28,7 @@ export default {
     axios.get("http://localhost:8080/api/client/counter")
       .then(response => {
         console.log(response);
-        this.counter = response.data;
+        this.counter = response.data.count;
       })
       .catch(e => {
         console.log(e);

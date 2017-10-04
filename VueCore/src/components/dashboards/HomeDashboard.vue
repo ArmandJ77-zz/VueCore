@@ -8,17 +8,21 @@
           <div class="container-spacer_m"></div>
         </v-flex>
         <counter-component></counter-component>
+        <v-flex xs12 offset-lg3 offset-sm4>
+          <grid-component></grid-component>
+        </v-flex>
       </v-layout>
     </v-container>
   </div>
 </template>
 
 <script>
-// import clientGrid from '../Client/ClientGridComponent'
+import GridComponent from '../clients/GridComponent';
 import CounterComponent from '../clients/CounterComponent'
 export default {
   components: {
-    'counter-component': CounterComponent
+    'counter-component': CounterComponent,
+    'grid-component': GridComponent
   },
   data() {
     return {

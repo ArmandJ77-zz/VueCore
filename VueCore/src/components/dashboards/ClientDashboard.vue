@@ -3,12 +3,7 @@
     <v-container fluid fill-height>
       <v-layout>
         <v-flex offset-lg3 offset-sm4>
-          <h1>Client Grid</h1>
-          <!-- <client-Component></client-Component> -->
-          <br/>
-          <v-divider></v-divider>
-          <br/>
-          <!-- <clientGrid-component></clientGrid-component> -->
+          <add-component></add-component>
         </v-flex>
       </v-layout>
     </v-container>
@@ -16,13 +11,12 @@
 </template>
 
 <script>
-// import ClientAdd from '../Client/ClientAdd';
-// import ClientGrid from '../Client/ClientGridComponent';
+import AddComponent from '../clients/AddComponent';
+
 export default {
-  // components: {
-  //   'client-Component': ClientAdd,
-  //   'clientGrid-component': ClientGrid
-  // },
+  components: {
+    'add-component': AddComponent
+  },
 }
 </script>
 
