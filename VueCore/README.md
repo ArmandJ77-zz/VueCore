@@ -1,30 +1,7 @@
-# vuecore
+# Vue + Vuetify + Nancy + .Net Core 
 
-> A Vue.js project
+This project ius about brigning the above frameworks together in one application to serve as a demo for [Coding with Vue.js on top of ASP.Net Core with NancyFx](https://www.armandjordaan.com/single-post/2017/10/01/Coding-with-Vuejs-on-top-of-ASPNet-Core-with-NancyFx)
 
-## Build Setup
+## Get Started
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+This is a standard .NET Core application and my be run using either Visual Studio or Visual Studio Code.
